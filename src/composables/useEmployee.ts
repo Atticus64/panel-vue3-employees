@@ -23,7 +23,7 @@ export const useEmployee = async () => {
 
 
   async function deleteEmployee(id: string) {
-    const resp = await fetch(`${EMPLOYEES_URL}/${id}`, {
+    await fetch(`${EMPLOYEES_URL}/${id}`, {
       method: 'DELETE',
     }).then<Resp>(d => d.json())
 
