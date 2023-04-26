@@ -57,7 +57,7 @@ const saveEmployee = async (event: Event) => {
 
 <template>
   <div v-if="create" class="modal-form flex flex-col p-4 ">
-        <div class="dark:bg-sky-600">
+        <div class="dark:bg-gray-700">
           <Modal>
             <form class="form " @submit.prevent="(e) => saveEmployee(e)">
               <h5 class="text-2xl m-2">Crear nuevo Empleado</h5>
@@ -97,3 +97,6 @@ const saveEmployee = async (event: Event) => {
         </div>
       </div>
 </template>
+
+<style>
+</style>

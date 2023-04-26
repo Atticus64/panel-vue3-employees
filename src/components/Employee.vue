@@ -157,7 +157,7 @@ checkTheme()
           </FormEdit>
         </div>
       </div>
-      <li v-for="emp in employees" class="card to-blue-600" :key="emp.uid">
+      <li v-for="emp in employees" class="card" :key="emp.uid">
         <div class="w-full max-w-sm grid p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           <div class="flex flex-col items-center pb-10">
             <img class="w-24 h-24 mb-3 rounded-full shadow-lg" :src="`${avatarsUrl} + ${emp.names} ${emp.lastnames}`" :alt="`${emp.names} ${emp.lastnames} image`"/>

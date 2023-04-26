@@ -5,7 +5,7 @@
 
   <div class="modal-mask">
     <div class="modal-wrapper">
-        <div class="modal-container bg-slate-100 dark:bg-blue-800">
+        <div class="modal-container bg-slate-100 dark:bg-gray-800">
           <slot>
           </slot>
       </div>
