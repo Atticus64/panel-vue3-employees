@@ -141,11 +141,14 @@ checkTheme()
 </div>
 
 </div>
+<button @click="createEmployee = true" class="m-4 p-4 bg-white dark:bg-cyan-900 dark:border-transparent">Nuevo Empleado</button>
+<div v-if="createEmployee">
+  <FormCreate :create="createEmployee">
+    <button class="p-2 m-2 bg-white dark:bg-cyan-900 dark:border-transparent" @click="closeCreate">Salir</button>
+  </FormCreate>
+</div>
   <section v-if="employees.length > 0">
     <h3 class="text-3xl font-bold">Employees List</h3>
-    <button @click="createEmployee = true" class="mt-4 p-4 bg-white dark:bg-cyan-900 dark:border-transparent">Nuevo Empleado</button>
-
-    
     <ul>
       <div v-if="currentEmployee && changeEmployee">
         <div>
@@ -153,12 +156,6 @@ checkTheme()
             <button class="p-2 m-2 bg-white dark:bg-cyan-900 dark:border-transparent" @click="closeEdit">Salir</button>
           </FormEdit>
         </div>
-      </div>
-      <div v-if="createEmployee">
-        <FormCreate :create="createEmployee">
-          <button class="p-2 m-2 bg-white dark:bg-cyan-900 dark:border-transparent" @click="closeCreate">Salir</button>
-        </FormCreate>
-
       </div>
       <li v-for="emp in employees" class="card to-blue-600" :key="emp.uid">
         <div class="w-full max-w-sm grid p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
