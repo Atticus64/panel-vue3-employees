@@ -1,18 +1,17 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Panel web del api [EmployeesApi](https://github.com/Atticus64/employees-ts)
 
-## Recommended IDE Setup
+Necesito un sistema que me permita dar de alta Empleados, donde pueda registrar el nombre, apellidos, edad, fecha de ingreso, fecha de nacimiento, si tiene hijos y cuantos, sueldo, Activo. De esa manera podre administrar los empleados de mi organizacion.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Validaciones:
+* No se permiten empleados menores de 18 años
+* El nombre, apellidos, no debe ser mayor a 100 caracteres
+* La edad debe almacenar un valor numerico entre 18 y 60
+* El sueldo debe almacenar un valor numerico sin decimales
+* El atributo Activo deber almacenar un bit que indique si el empleado esta activo o no en la empresa
 
-## Type Support For `.vue` Imports in TS
+En caso de no cumplirse las validaciones mandar al usuario un mensaje indicando el error
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Las validaciones deben ser superadas para crear o actualizar un empleado
+La accion "Eliminar empleado" debera desactivar al empleado y no eliminarlo de la base de datos.
